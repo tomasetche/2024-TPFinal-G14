@@ -1,0 +1,13 @@
+.chatButton{
+    background-color:  #075e54;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;  
+    align-items: center;
+}
+
+.imagen {
+    width: 10%;
+    border-radius: 50%;
+    border: solid black 3px;
+}

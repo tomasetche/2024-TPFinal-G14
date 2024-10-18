@@ -8,4 +8,11 @@ import Buscador from "../components/buscador";
 import Chat from "../components/chat";
 import ListadoChats from "../components/listadoChats";
 import styles from "./page.module.css";
+import Header from "../components/header";
 
+export default function home(){
+
+    <>
+    <Header></Header>
+    </>
+}

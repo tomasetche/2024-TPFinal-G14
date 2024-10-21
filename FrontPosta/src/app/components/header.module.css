@@ -1,22 +1,149 @@
-* {
+/* Reset and base styles */
+
+.body {
+    font-family: Arial, sans-serif;
+    background-color: #f8efc3;
+}
+
+.header1 {
+    width: 100%;
+    background-color: #e1d75f;
+    padding: 10px 20px;
+    border-bottom: 2px solid #7aa40c;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Permite que los elementos se ajusten cuando no hay suficiente espacio */
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+}
+
+.searchBar input {
+    padding: 5px;
+    width: 300px;
+    border: 2px solid #154096;
+    border-radius: 5px;
+}
+
+.authButtons button {
+    background-color: #154096;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.authButtons button:hover {
+    background-color: #12225b;
+}
+
+.navBar {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-around;
+    background-color: #7aa40c;
+    padding: 10px;
+    border-radius: 5px;
+    flex-wrap: wrap; /* Ajusta los botones para que se acomoden en filas múltiples si es necesario */
+}
+
+.navBar button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+.navBar button:hover {
+    text-decoration: underline;
+}
+
+/* Estilos responsivos para dispositivos móviles */
+@media (max-width: 768px) {
+    .searchBar input {
+        width: 200px; /* Reduce el tamaño de la barra de búsqueda en pantallas pequeñas */
+    }
+
+    .authButtons {
+        margin-top: 10px; /* Añade margen para separar los botones en pantallas pequeñas */
+    }
+
+    .authButtons button {
+        padding: 10px; /* Agranda los botones para que sean más fáciles de tocar en pantallas táctiles */
+    }
+
+    .navBar {
+        flex-direction: column; /* Apila los botones verticalmente en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .navBar button {
+        width: 100%; /* Los botones ocupan todo el ancho disponible */
+        text-align: left; /* Opcional: Alinea el texto a la izquierda */
+        padding: 10px 0; /* Espaciado adicional para facilitar el toque en móviles */
+    }
+}
+
+/* Estilos para pantallas aún más pequeñas (como teléfonos) */
+@media (max-width: 480px) {
+    .topBar {
+        flex-direction: column; /* Apila los elementos verticalmente */
+        align-items: center;
+    }
+
+    .searchBar input {
+        width: 100%; /* Barra de búsqueda ocupa todo el ancho en pantallas pequeñas */
+        margin-top: 10px;
+    }
+
+    .authButtons {
+        flex-direction: column; /* Apila los botones verticalmente */
+        align-items: center;
+    }
+
+    .authButtons button {
+        width: 100%;
+        margin: 5px 0; /* Separa los botones verticalmente */
+    }
+
+    .navBar button {
+        font-size: 14px; /* Reduce un poco el tamaño de la fuente */
+    }
+}
+
+
+/*.header1 {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
     font-family: Arial, sans-serif;
     background-color: #f8efc3;
 }
 
-header {
+.header {
     width: 100%;
     background-color: #e1d75f;
     padding: 10px 20px;
     border-bottom: 2px solid #7aa40c;
 }
 
-.top-bar {
+.topBar {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -27,14 +154,14 @@ header {
     height: auto;
 }
 
-.search-bar input {
+.searchBar input {
     padding: 5px;
     width: 300px;
     border: 2px solid #154096;
     border-radius: 5px;
 }
 
-.auth-buttons button {
+.authButtons button {
     background-color: #154096;
     color: white;
     padding: 5px 10px;
@@ -44,11 +171,11 @@ header {
     margin-left: 10px;
 }
 
-.auth-buttons button:hover {
+.authButtons button:hover {
     background-color: #12225b;
 }
 
-.nav-bar {
+.navBar {
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
@@ -57,7 +184,7 @@ header {
     border-radius: 5px;
 }
 
-.nav-bar button {
+.navBar button {
     background-color: transparent;
     border: none;
     color: white;
@@ -65,6 +192,6 @@ header {
     font-size: 16px;
 }
 
-.nav-bar button:hover {
+.navBar button:hover {
     text-decoration: underline;
-}
+}*/

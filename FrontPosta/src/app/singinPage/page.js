@@ -56,30 +56,24 @@ export default function loginPage(){
         location.href = "/home?userId=" +  localStorage.getItem("userId")
     }
 
-    /*function login() {
-        const username = getUserLogin()
-        const password = getPasswordLogin()
-    }*/
-
     function redirigirLogin(){
-        location.href = "/singinPage"
+        location.href = "/loginPage"
     }
 
     return(<>
         <div className={styles.container}>
             <div className={styles["login-box"]}>
-                <h1>Login</h1>
+                <h1>Registro</h1>
                 <h2>Nombre de usuario</h2>
                 <input onChange={manejarNombre} className={styles.input} type="text" placeholder="Ingresar nombre" id="login-username" />
                 <h2>Contraseña</h2>
                 <input onChange={manejarContraseña} className={styles.input} type="password" placeholder="Ingresar contraseña" id="login-password" />
-                <button className={styles.boton} onClick={login}>Ingresar</button>
+                <button className={styles.boton} onClick={login}>registrarse</button>
                 <h2>.</h2>
-                <button className={styles.boton} onClick={redirigirLogin}>No tengo usuario, registrase</button>
+                <button className={styles.boton} onClick={redirigirLogin}>ya tengo usuario, iniciar cesion</button>
             </div>
         </div>
     </>)
 
-    //<Login manejarNombre={manejarNombre} manejarContraseña={manejarContraseña}></Login>
-    //            <Button text="ingresar" onClick={login} />
+
 }

@@ -3,7 +3,6 @@ import styles from "./publicacion.module.css"
 
 import React from 'react';
 
-
 const Publicacion = ({ imageUrl, precio, productName }) => {
   return (
     <div className={styles.cuadro}>

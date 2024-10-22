@@ -30,7 +30,7 @@
 .searchBar input {
     padding: 5px;
     width: 300px;
-    border: 2px solid #154096;
+    border: 2px solid #7aa40c;
     border-radius: 5px;
 }
 
@@ -63,7 +63,7 @@
     border: none;
     color: white;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 24px;
     margin: 5px;
 }
 

@@ -51,8 +51,7 @@ export default function loginPage(){
             contraseña: contraseña,
             mail: mail,
         }
-        
-        const response = await fetch('http://localhost:3000/addUser',{
+        const response = await fetch('http://localhost:4000/addUser',{
             method:"POST",
             headers: {
                 "Content-Type": "application/json",
@@ -60,8 +59,11 @@ export default function loginPage(){
             body:JSON.stringify(data),
         }) 
         
+        var respuesta = await response.json();
+
         if (response.status == 200)
             alert("registrado correctamente");
+        localStorage.setItem("userId", respuesta.id)
             redirigir()
         if (response.status == 204)
             alert("fallo el registro");
@@ -99,7 +101,7 @@ export default function loginPage(){
                 <input onChange={manejarMail} className={styles.input} type="mail" placeholder="Ingresar un mail" id="singin-password" />
                 <button className={styles.boton} onClick={register}>Registro</button>
                 <h2>.</h2>
-                <button className={styles.boton} onClick={redirigirLogin}>ya tengo usuario, iniciar cesion</button>
+                <button className={styles.boton} onClick={redirigirLogin}>ya tengo usuario, iniciar sesión</button>
             </div>
         </div>
     </>)

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import Button from "../components/boton";
 import Title from "../components/title";
@@ -9,17 +9,18 @@ import Chat from "../components/chat";
 import ListadoChats from "../components/listadoChats";
 import styles from "./page2.module.css";
 import Header from "../components/header";
-import Publicacion from "../components/publicacion";
+import Informacion from "../components/informacion"; // Cambiado a mayúscula
 
 export default function Home() {
-    return (
-      <div className={styles.container}>
-        <Header />
-        <Publicacion 
-          precio="430.000" 
-          productName="Bicicleta" 
-          imageUrl="https://acdn.mitiendanube.com/stores/002/522/532/products/shiftlateral1-e8780b88064bc303bf16771490269917-1024-1024.webp" 
-        />
-      </div>
-    );
-  }
+  return (
+    <div className={styles.container}>
+      <Header />
+      <Informacion 
+      precio="$30.000" 
+      productName="Pelota Futbol Nassau Pro Championship Profesional Cosida N°5 Campo Color Blanco/Negro" 
+      imageUrl="https://www.deportesonce.com.ar/wp-content/uploads/virtuemart/product/championship-29.jpg"
+      descripcion="gkbiosehgbje"
+      ></Informacion>
+    </div>
+  );
+}

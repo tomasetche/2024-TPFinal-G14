@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente el cuadro en la pantalla */
+    padding: 20px;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    align-items: center; /* Centra verticalmente */
+  }
+  
+  .cuadro {
+    display: flex;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    padding: 60px;
+    width: 1300px; /* Aumenta el tamaño del cuadro */
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    align-items: center; /* Alinea el contenido del cuadro verticalmente */
+  }
+  
+  .imagen {
+    width: 550px; /* Tamaño fijo para la imagen */
+    height: auto;
+    margin-right: 100px; /* Espacio entre la imagen y los detalles */
+  }
+  
+  .detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1; /* Permite que esta sección ocupe todo el espacio restante */
+    margin-right: 100px; /* Espacio entre los detalles y el borde */
+  }
+  
+  .productName {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000000;
+    font-weight: bold;
+  }
+  
+  .precio {
+    font-size: 26px;
+    color: #000000;
+    margin-bottom: 20px;
+  }
+  
+  .botonComprar {
+    padding: 10px 20px;
+    background-color: #3483fa;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+  .descripcion {
+    font-size: 16px;
+    color: #666;
+    margin-top: 20px; /* Espacio superior para separar la descripción de la imagen */
+    max-width: 550px; /* Hace que la descripción tenga el mismo ancho que la imagen */
+  }

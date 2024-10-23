@@ -78,7 +78,18 @@ app.get('/getChats', async function(req,res) {
 	
 })
 
-
+app.post('/addUser', async function(req,res) {
+    //console.log(req.body);
+    let usuarioExistente = await MySql.realizarQuery(`select * from Usuarios where Nombre = '${req.body.nombre}'`);
+    if (usuarioExistente.length != 0) {
+        res.status(204);
+        res.send("ya existe ese usuario");
+    } else {
+        await MySql.realizarQuery(`INSERT INTO Usuarios (nombre, contraseña, mail, puntaje)
+        VALUES ('${req.body.nombre}', '${req.body.contraseña}', '${req.body.mail}', 0)`);
+        res.send("agregado");     
+    }
+})
 
 app.get('/', (req, res) => {
 	console.log(`[REQUEST - ${req.method}] ${req.url}`);

@@ -71,6 +71,13 @@
     text-decoration: underline;
 }
 
+.logoImage{
+    /*padding: 5px 10px;*/
+    margin-left: 10px;
+    height: 300000px;
+
+}
+
 /* Estilos responsivos para dispositivos móviles */
 @media (max-width: 768px) {
     .searchBar input {

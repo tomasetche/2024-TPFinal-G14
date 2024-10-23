@@ -56,11 +56,6 @@ export default function loginPage(){
         location.href = "/home?userId=" +  localStorage.getItem("userId")
     }
 
-    /*function login() {
-        const username = getUserLogin()
-        const password = getPasswordLogin()
-    }*/
-
     function redirigirLogin(){
         location.href = "/singinPage"
     }

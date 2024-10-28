@@ -113,6 +113,15 @@ app.post('/login', async (req, res) => {
 
 });
 
+app.post('/getUserHeader', async (req, res) => {
+	let usuarioExistente = await MySQL.realizarQuery(`select nombre from Usuarios where id = '${req.body.userId}'` );
+    console.log(usuarioExistente);
+	if(usuarioExistente.length != 0)
+		res.send({nombre: usuarioExistente[0].nombre});
+	else
+		res.send({nombre: ""});
+});
+
 app.delete('/login', (req, res) => {
 	console.log(`[REQUEST - ${req.method}] ${req.url}`);
 	res.send(null);

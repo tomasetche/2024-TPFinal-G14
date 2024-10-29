@@ -4,22 +4,27 @@ import Button from "../components/boton";
 import Title from "../components/title";
 import CheckBox from "../components/checkbox";
 import styles from "./header.module.css"
+import { useRouter } from "next/navigation";
 
 
 export default function Header(props) {
-
+    const router = useRouter();
     const [userId, setUserId] = useState(0);
     const [username, setUsername] = useState("");
 
     async function getNameHeader(){
 
+        const urlParams = new URLSearchParams(window.location.search);
+        const idUsuario = urlParams.get("userId")
+        setUserId(idUsuario);
+
         const data = {
-            userId: userId,
+            userId: idUsuario,
         }
 
         const response = await fetch('http://localhost:4000/getUserHeader',{
             method:"POST",
-         headers: {
+            headers: {
                 "Content-Type": "application/json",
             },
             body:JSON.stringify(data),
@@ -30,33 +35,23 @@ export default function Header(props) {
         console.log(respuesta)
         setUsername(respuesta.nombre)
         localStorage.setItem("userName", respuesta.nombre)
-      
-            
-
     }
 
     useEffect(() => {
-        manejarUseridHome();
         getNameHeader();
-        
     },[])
 
-    function manejarUseridHome() {
-        setUserId(localStorage.getItem("userId"))
-        // obtener de la URL no de localstorage
-    }
-
     function redirigirLogin(){
-        location.href = "/loginPage"
+        router.push("/loginPage");
     }
 
     function redirigirSingin(){
-        location.href = "/singinPage"
+        router.push("/singinPage");
     }
     
     function redirigirLogout() {
-        localStorage.setItem("userId", 0)
-        location.href = "/home"
+        setUserId(0);
+        router.push("/home");
     }
 
     return (
@@ -70,11 +65,11 @@ export default function Header(props) {
                      <input type="text" placeholder="Search..." />
                  </div>
                     { 
-                    userId == 0 &&
-                    <div className={styles.authButtons}>
-                        <button className={styles.login} onClick={redirigirLogin} >Login</button>
-                        <button className={styles.register} onClick={redirigirSingin} >Register</button>
-                    </div>
+                        userId == 0 &&
+                        <div className={styles.authButtons}>
+                            <button className={styles.login} onClick={redirigirLogin} >Login</button>
+                            <button className={styles.register} onClick={redirigirSingin} >Register</button>
+                        </div>
                     }
                     {
                         userId != 0 &&

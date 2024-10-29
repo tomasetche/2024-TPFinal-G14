@@ -22,8 +22,8 @@
     flex-wrap: wrap; /* Permite que los elementos se ajusten cuando no hay suficiente espacio */
 }
 
-.logo img {
-    width: 50px;
+.logoImage {
+    width: 100px;
     height: auto;
 }
 

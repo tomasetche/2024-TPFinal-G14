@@ -54,6 +54,8 @@ export default function Header(props) {
         router.push("/home");
     }
 
+    console.log("ID", userId);
+
     return (
         < >
          <header className={styles.header1} >
@@ -65,18 +67,18 @@ export default function Header(props) {
                      <input type="text" placeholder="Search..." />
                  </div>
                     { 
-                        userId == 0 &&
+                        userId > 0 ?
+                        <div className={styles.authButtons}>
+                            <h2>{username}</h2>
+                            <button className={styles.login} onClick={redirigirLogout}>Logout</button>
+                        </div>
+
+                        :
+
                         <div className={styles.authButtons}>
                             <button className={styles.login} onClick={redirigirLogin} >Login</button>
                             <button className={styles.register} onClick={redirigirSingin} >Register</button>
                         </div>
-                    }
-                    {
-                        userId != 0 &&
-                        <div className={styles.authButtons}>
-                            <h2>{username}</h2>
-                            <button className={styles.login} onClick={redirigirLogout}>Logout</button>
-                        </div>                        
                     }
                     
              </div>

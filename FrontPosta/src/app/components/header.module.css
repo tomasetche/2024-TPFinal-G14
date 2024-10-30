@@ -34,6 +34,14 @@
     border-radius: 5px;
 }
 
+/* Botones de autenticación */
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espacio entre elementos */
+}
+
+
 .authButtons button {
     background-color: #154096;
     color: white;
@@ -42,6 +50,14 @@
     border-radius: 5px;
     cursor: pointer;
     margin-left: 10px;
+}
+
+.authButtons h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #154096;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
 }
 
 .authButtons button:hover {

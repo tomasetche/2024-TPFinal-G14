@@ -83,16 +83,16 @@ export default function Header(props) {
                     
              </div>
              <nav className={styles.navBar}>
-                 <button>Mis productos</button>
-                    <button>Deportes</button>
-                    <button>Electrónicos</button>
-                    <button>Hogar</button>
-                    <button>Moda</button>
-                    <button>Supermercado</button>
-                 <button>Herramientas</button>
-                    <button>Vehículos</button>
-                    <button>Juguetes</button>
-                    <button>General</button>
+                    <button name="misproductos"onClick={props.onClick}>Mis productos</button>
+                    <button name="deportes" onClick={props.onClick}>Deportes</button>
+                    <button name="electronicos" onClick={props.onClick}>Electrónicos</button>
+                    <button name="hogar" onClick={props.onClick}>Hogar</button>
+                    <button name="moda" onClick={props.onClick}>Moda</button>
+                    <button name="supermercado" onClick={props.onClick}>Supermercado</button>
+                    <button name="herramientas" onClick={props.onClick}>Herramientas</button>
+                    <button name="vehiculos" onClick={props.onClick}>Vehículos</button>
+                    <button name="juguetes" onClick={props.onClick}>Juguetes</button>
+                    <button name="general" onClick={props.onClick}>General</button>
                 </nav>
             </header>
         </>

@@ -71,6 +71,33 @@ app.get('/getUser', async function(req,res) {
     }
 })
 
+app.get('/getPublicaciones', async function(req,res) {
+    console.log(req.query);
+	if (req.query.categoria == "general") {
+		let publicaciones = MySQL.realizarQuery("SELECT * FROM Publicacion");
+		res.send({publicaciones: publicaciones})
+	}
+
+	if (req.query.categoria == "misproductos") {
+		// aca uso el user id
+		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario =${req.body.userId}` );
+		res.send({publicaciones: publicaciones})
+	} else {
+		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario =${req.body.userId}` );
+		res.send({publicaciones: publicaciones})
+	}
+	
+    let usuarioExistente = await MySQL.realizarQuery(`select * from Usuarios where nombre = '${req.query.nombre}' and contraseña = '${req.query.contraseña}'` );
+    if (usuarioExistente.length != 0 ) {
+        res.status(200);
+        res.send({res:"usuario ingresado", id: `${usuarioExistente[0].id}`});
+    } else {
+        res.status(204);
+        res.send({res:"usuario o contraseña incorrecta",id: usuarioExistente.id});   
+    }
+		
+})
+
 app.get('/getChats', async function(req,res) {
     console.log(req.query);
     let chats = await MySQL.realizarQuery(`select * from Chats_users where Id_user = ${req.query.userId}` );
@@ -126,6 +153,8 @@ app.delete('/login', (req, res) => {
 	console.log(`[REQUEST - ${req.method}] ${req.url}`);
 	res.send(null);
 });
+
+
 
 io.on("connection", (socket) => {
 	const req = socket.request;

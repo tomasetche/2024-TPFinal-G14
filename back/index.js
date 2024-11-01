@@ -83,7 +83,7 @@ app.get('/getPublicaciones', async function(req,res) {
 		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario =${req.body.userId}` );
 		res.send({publicaciones: publicaciones})
 	} else {
-		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario =${req.body.userId}` );
+		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where categoria =${req.body.categoria}` );
 		res.send({publicaciones: publicaciones})
 	}
 	

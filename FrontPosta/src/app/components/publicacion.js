@@ -6,7 +6,7 @@ const Publicacion = ({ imageUrl, precio, productName }) => {
   //const router = useRouter();
 
   function redirigirPublicacion(){
-    location.href = "/publicacion"
+    location.href = "/publicacion?userId=" +  localStorage.getItem("userId")
   }
   return (
     <div className={styles.cuadro}>

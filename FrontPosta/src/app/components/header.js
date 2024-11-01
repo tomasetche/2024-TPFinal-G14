@@ -50,6 +50,7 @@ export default function Header(props) {
     }
     
     function redirigirLogout() {
+        localStorage.setItem("userId", 0)
         setUserId(0);
         router.push("/home");
     }

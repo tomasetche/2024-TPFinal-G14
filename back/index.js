@@ -72,7 +72,7 @@ app.get('/getUser', async function(req,res) {
 })
 
 app.get('/getPublicaciones', async function(req,res) {
-    console.log(req.query);
+    console.log(req.query.categoria);
 	if (req.query.categoria == "general") {
 		let publicaciones = MySQL.realizarQuery("SELECT * FROM Publicacion");
 		res.send({publicaciones: publicaciones})
@@ -80,10 +80,10 @@ app.get('/getPublicaciones', async function(req,res) {
 
 	if (req.query.categoria == "misproductos") {
 		// aca uso el user id
-		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario =${req.body.userId}` );
+		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario = '${req.query.userId}'` );
 		res.send({publicaciones: publicaciones})
 	} else {
-		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where categoria =${req.body.categoria}` );
+		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where categoria = '${req.query.categoria}'` );
 		res.send({publicaciones: publicaciones})
 	}
 	

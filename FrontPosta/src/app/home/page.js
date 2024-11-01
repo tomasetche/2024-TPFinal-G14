@@ -30,9 +30,10 @@ export default function home(){
 }
 
   async function fetchProductos(event) {
-    console.log(event.target.name)
     var categoria = event.target.name;
+    console.log("categoria: ", categoria)
     let url = 'http://localhost:4000/getPublicaciones' + '?userId=' +  localStorage.getItem("userId") + '&categoria=' + categoria;
+    console.log("url: ", url)
     const response = await fetch(url,{
         method:"GET",
         headers: {

@@ -72,29 +72,23 @@ app.get('/getUser', async function(req,res) {
 })
 
 app.get('/getPublicaciones', async function(req,res) {
+	console.log(req.query);
     console.log(req.query.categoria);
 	if (req.query.categoria == "general") {
-		let publicaciones = MySQL.realizarQuery("SELECT * FROM Publicacion");
+		let publicaciones = await MySQL.realizarQuery("SELECT * FROM Publicacion");
 		res.send({publicaciones: publicaciones})
 	}
 
 	if (req.query.categoria == "misproductos") {
 		// aca uso el user id
-		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where id_usuario = '${req.query.userId}'` );
+		let publicaciones = await MySQL.realizarQuery(`select * from Publicacion where id_usuario = '${req.query.userId}'` );
+		console.log(publicaciones)
 		res.send({publicaciones: publicaciones})
 	} else {
-		let publicaciones = MySQL.realizarQuery(`select * from Publicacion where categoria = '${req.query.categoria}'` );
+		let publicaciones = await MySQL.realizarQuery(`select * from Publicacion where categoria = '${req.query.categoria}'` );
 		res.send({publicaciones: publicaciones})
 	}
-	
-    let usuarioExistente = await MySQL.realizarQuery(`select * from Usuarios where nombre = '${req.query.nombre}' and contraseña = '${req.query.contraseña}'` );
-    if (usuarioExistente.length != 0 ) {
-        res.status(200);
-        res.send({res:"usuario ingresado", id: `${usuarioExistente[0].id}`});
-    } else {
-        res.status(204);
-        res.send({res:"usuario o contraseña incorrecta",id: usuarioExistente.id});   
-    }
+
 		
 })
 

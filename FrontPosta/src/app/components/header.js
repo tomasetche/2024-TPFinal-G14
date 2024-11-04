@@ -65,7 +65,6 @@ export default function Header(props) {
                     <img src="images/logoCacho.png" className={styles.logoImage} alt="Logo" />
                  </div>
                     <div className={styles.searchBar}>
-                     <input type="text" placeholder="Search..." />
                  </div>
                     { 
                         userId > 0 ?

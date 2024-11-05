@@ -33,7 +33,7 @@ export default function home(){
         />
         <Publicacion 
           precio="$43.000" 
-          productName="Camperon" 
+          productName="Repasador" 
           imageUrl="https://http2.mlstatic.com/D_NQ_NP_846479-MLA49647420158_042022-O.webp" 
         />
         <Publicacion 
@@ -55,6 +55,16 @@ export default function home(){
           precio="$25.000" 
           productName="Almohadon" 
           imageUrl="https://www.homecollection.com.ar/pub/media/catalog/product/cache/image/e9c3970ab036de70892d86c6d221abfe/a/l/almohadon_simil_lana_4_1.jpg" 
+        />
+         <Publicacion 
+          precio="$2.560" 
+          productName="Coca-Cola" 
+          imageUrl="https://f2h.shop/media/catalog/product/cache/ab45d104292f1bb63d093e6be8310c97/i/m/imageedit_3_4516158279.png" 
+        />
+        <Publicacion 
+          precio="US$10.000" 
+          productName="Fiat Cronos" 
+          imageUrl="https://www.megautos.com/wp-content/uploads/2024/02/Fiat-Cronos-2023-delantera-1.jpg" 
         />
       </div>
     </>)

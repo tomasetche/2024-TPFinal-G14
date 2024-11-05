@@ -12,8 +12,8 @@ const ListadoPublics = ({publics}) => {
         <ul>
           {
             publics.length != 0 && 
-            publics.map((public) =>
-              <Publicacion> imageUrl={public.id} productName={public.nombrePub} precio={public.precio}</Publicacion>
+            publics.map((publics) =>
+              <Publicacion> imageUrl={publics.id} productName={publics.nombrePub} precio={publics.precio}</Publicacion>
             )
           }
         </ul>
